@@ -1,36 +1,55 @@
+// components/NewsCard.js
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
-export default function NewsCard({ article }) {
+export default function NewsCard({ item }) {
   return (
-    <article className={styles.newsCard}>
+    <div className={styles.newsCard}>
       <div className={styles.cardImage}>
-        <img src={article.image} alt={article.title} loading="lazy" />
-        <span className={styles.cardCategory}>{article.category}</span>
+        <img 
+          src={item.image} 
+          alt={item.title}
+          loading="lazy"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = `https://via.placeholder.com/400x225/1e40af/ffffff?text=${encodeURIComponent(item.category)}`;
+          }}
+        />
+        <span className={styles.cardCategory}>{item.category}</span>
       </div>
       
       <div className={styles.cardContent}>
         <div className={styles.cardMeta}>
-          <time className={styles.cardDate}>{article.date}</time>
-          <span className={styles.cardSource}>{article.source}</span>
+          <span className={styles.cardDate}>{item.date}</span>
+          <div className={styles.sourceContainer}>
+            <img 
+              src={item.source_logo} 
+              alt={item.source_name}
+              className={styles.sourceLogo}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.style.display = 'none';
+              }}
+            />
+            <span className={styles.cardSource}>{item.source_name}</span>
+          </div>
         </div>
         
         <h3 className={styles.cardTitle}>
-          <Link href={`/article/${article.id}`}>{article.title}</Link>
+          <Link href={`/article/${item.slug}`} prefetch={false}>
+            {item.title}
+          </Link>
         </h3>
         
-        <p className={styles.cardExcerpt}>{article.description}</p>
+        <p className={styles.cardDescription}>{item.description}</p>
         
         <div className={styles.cardFooter}>
-          <Link href={`/article/${article.id}`} className={styles.readMore}>
+          <Link href={`/article/${item.slug}`} className={styles.readMore}>
             Читать далее →
           </Link>
-          <div className={styles.cardStats}>
-            <span className={styles.statItem}>👁️ {article.views}</span>
-            <span className={styles.statItem}>💬 {article.comments}</span>
-          </div>
         </div>
       </div>
-    </article>
+    </div>
   );
 }

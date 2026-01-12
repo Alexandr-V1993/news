@@ -1,0 +1,287 @@
+/* styles/Article.module.css */
+.loading {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #1e40af;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  text-align: center;
+  padding: 4rem 0;
+  color: #dc2626;
+}
+
+.error h2 {
+  margin-bottom: 1rem;
+}
+
+.articleBack {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: #1e40af;
+  font-weight: 500;
+}
+
+.articleHeader {
+  margin-bottom: 2rem;
+}
+
+.articleCategory {
+  display: inline-block;
+  background: #1e40af;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.articleTitle {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.articleMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.sourceInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sourceLogo {
+  height: 20px;
+  width: auto;
+}
+
+.articleImageContainer {
+  margin: 2rem 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.articleImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.articleContentWrapper {
+  max-width: 800px;
+  margin: 3rem auto;
+}
+
+.articleContent {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #374151;
+}
+
+.articleContent p {
+  margin-bottom: 1.5rem;
+}
+
+.articleContent strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.articleTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.tagsLabel {
+  font-weight: 500;
+  color: #6b7280;
+  margin-right: 0.5rem;
+}
+
+.tag {
+  background: #e5e7eb;
+  color: #4b5563;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+}
+
+.articleStats {
+  background: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statIcon {
+  font-size: 1.25rem;
+}
+
+.statLabel {
+  color: #6b7280;
+}
+
+.statValue {
+  font-weight: 600;
+  color: #111827;
+}
+
+.relatedSection {
+  margin: 4rem 0;
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  color: #111827;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.relatedCard {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.relatedCard:hover {
+  transform: translateY(-5px);
+}
+
+.relatedImage {
+  height: 200px;
+  overflow: hidden;
+}
+
+.relatedImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.relatedCard:hover .relatedImage img {
+  transform: scale(1.05);
+}
+
+.relatedContent {
+  padding: 1.5rem;
+}
+
+.relatedCategory {
+  display: inline-block;
+  background: #1e40af;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.relatedTitle {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.relatedTitle a:hover {
+  text-decoration: none;
+  color: #1e40af;
+}
+
+.relatedMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.relatedSource {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sourceLogoSmall {
+  height: 16px;
+  width: auto;
+}
+
+.relatedLink {
+  display: inline-block;
+  color: #1e40af;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 2px solid #1e40af;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.relatedLink:hover {
+  background: #1e40af;
+  color: white;
+  text-decoration: none;
+}
+
+.backToHome {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.homeButton {
+  display: inline-block;
+  background: #1e40af;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.homeButton:hover {
+  background: #1e3a8a;
+  text-decoration: none;
+}
